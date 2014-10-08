@@ -1,7 +1,7 @@
 
 var _ = require('lodash');
 var changelog = require('conventional-changelog');
-var dgeni = require('dgeni');
+var Dgeni = require('dgeni');
 var fs = require('fs');
 var glob = require('glob').sync;
 var gulp = require('gulp');
@@ -121,8 +121,11 @@ gulp.task('docs-html', function() {
     .pipe(gulp.dest(buildConfig.docsDist));
 });
 
-gulp.task('docs-generate', function() {
-  return dgeni.generator(__dirname + '/docs/index.js')();
+gulp.task('docs-generate', ['build'], function() {
+  var dgeni = new Dgeni([
+    require('./docs')
+  ]);
+  return dgeni.generate();
 });
 
 gulp.task('docs-app', function() {

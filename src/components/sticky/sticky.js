@@ -20,7 +20,7 @@ angular.module('material.components.sticky', [
 ]);
 
 /**
- * @ngdoc factory
+ * @ngdoc service
  * @name $materialSticky
  * @module material.components.sticky
  *
