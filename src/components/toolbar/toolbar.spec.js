@@ -1,2 +1,0 @@
-describe('materialToolbar directive', function() {
-});
