@@ -1589,7 +1589,7 @@ function materialCheckboxDirective(inputDirectives, $expectAria) {
     // function.
     attr.type = 'checkbox';
     attr.tabIndex = 0;
-    inputDirective.link(scope, {
+    inputDirective.link.pre(scope, {
       on: angular.noop,
       0: {}
     }, attr, [ngModelCtrl]);
