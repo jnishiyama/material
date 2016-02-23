@@ -4092,7 +4092,7 @@ function QpToastService($timeout, $rootScope, $materialCompiler, $rootElement, $
       toastParent.addClass(toastParentClass);
 
       var delayTimeout;
-      $animate.enter(element, toastParent, null, function() {
+      $animate.enter(element, toastParent, null).then(function() {
         if (options.duration) {
           delayTimeout = $timeout(destroy, options.duration);
         }
